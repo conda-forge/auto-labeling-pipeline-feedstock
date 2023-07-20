@@ -1,5 +1,5 @@
 {% set name = "auto-labeling-pipeline" %}
-{% set version = "0.1.21" %}
+{% set version = "0.1.23" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/auto-labeling-pipeline-{{ version }}.tar.gz
-  sha256: 37e7ade06fb541414dccdeaf5194d6ac59366339d562b301478b1779d7b7c9f6
+  sha256: 8a0f15e275bda0c1f5cadd24bb58ba447f5593b38eb4eee6d18d420eca2c944c
 
 build:
   number: 0
