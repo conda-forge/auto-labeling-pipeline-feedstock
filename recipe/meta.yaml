@@ -7,24 +7,24 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/auto-labeling-pipeline-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/auto-labeling-pipeline-{{ version }}.tar.gz
   sha256: 8a0f15e275bda0c1f5cadd24bb58ba447f5593b38eb4eee6d18d420eca2c944c
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
     - setuptools-scm
   run:
     - boto3
     - jinja2
     - pydantic
-    - python >=3.6
+    - python >={{ python_min }}
     - requests
 
 test:
@@ -37,6 +37,7 @@ test:
     - pip
     - pytest
     - vcrpy
+    - python {{ python_min }}
   source_files:
     - tests
 
